@@ -1,0 +1,144 @@
+/* Urban - Black theme (parity con urban.css, versión oscura) */
+/* RESET & BASE */
+*{box-sizing:border-box;margin:0;padding:0}
+
+html{scroll-behavior:smooth}
+
+body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif;
+    background:#0f0f0f;
+    color:#f5f5f5;
+    line-height:1.6;
+}
+
+/* HEADER */
+header{
+    position:sticky;
+    top:0;
+    z-index:100;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:.75rem 1.5rem;
+    background: #1b1b1b;
+    border-bottom:3px solid #0b6b3a;
+}
+
+.branding{
+    display:flex;
+    align-items:center;
+    gap:.75rem
+}
+
+.branding h1{
+    font-size:1.1rem;
+    font-weight:700;
+    letter-spacing:.5px;
+    text-transform:uppercase
+}
+
+nav ul{
+    display:flex;
+    gap:1.2rem;
+    list-style:none
+}
+
+nav a{
+    color:#f5f5f5;
+    text-decoration:none;
+    font-size:.9rem;
+    font-weight:500;
+    position:relative
+}
+
+nav a::after{
+    content:"";
+    position:absolute;
+    bottom:-4px;
+    left:0;
+    width:0;
+    height:2px;
+    background:#0b6b3a;
+    transition:width .25s ease
+}
+
+nav a:hover::after{
+    width:100%
+}
+
+/* demo badge - translúcido oscuro */
+.demo-badge {
+	position: fixed;
+	top: 12px;
+	right: auto;
+	left: 50%;
+	transform: translateX(-50%);
+		padding: 6px 12px;
+		border-radius: 999px;
+		background: rgba(11,107,58,0.12);
+		color: rgba(11,107,58,0.95);
+		border: 1px solid rgba(11,107,58,0.85);
+		box-shadow: 0 8px 24px rgba(11,107,58,0.12);
+		backdrop-filter: blur(6px);
+		-webkit-backdrop-filter: blur(6px);
+		font-weight: 800;
+		font-size: 0.78rem;
+		letter-spacing: 0.6px;
+		text-transform: uppercase;
+		z-index: 120;
+}
+
+@media(max-width:720px){.demo-badge{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);top:auto;right:auto;padding:8px 16px}}
+
+/* SECTIONS BASE */
+main section{max-width:1100px;margin:0 auto;padding:4rem 1.5rem}
+.title-item{margin-bottom:1.5rem}
+.title-item h3{font-size:1.4rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;border-left:4px solid #0b6b3a;padding-left:.75rem}
+
+/* HERO */
+#inicio{background:rgba(255,255,255,0.02);border-radius:6px;text-align:center}
+#inicio h2{font-size:2.2rem;font-weight:800;margin-bottom:1rem}
+#inicio p{margin-bottom:.6rem;font-size:.95rem}
+
+/* SERVICIOS */
+#servicios ul{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.75rem;margin-bottom:2rem}
+#servicios li{list-style:none;background:#121212;padding:.75rem 1rem;border-left:4px solid rgba(255,255,255,0.06);font-size:.9rem;opacity:0;transform:translateY(10px);transition:transform .3s ease,box-shadow .3s ease,opacity .35s ease}
+#servicios li.reveal{opacity:1;transform:translateY(0)}
+#servicios li:hover{transform:translateY(-6px);box-shadow:0 10px 20px rgba(11,107,58,0.08);cursor:pointer}
+
+/* PRECIOS */
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
+.price-card{background:#121212;padding:1.5rem;border:1px solid rgba(255,255,255,0.04);position:relative;transition:transform .25s ease,box-shadow .25s ease}
+.price-card h4{font-size:1.1rem;margin-bottom:.5rem}
+.price{font-size:1.6rem;font-weight:800;margin-bottom:.3rem;color:#dcdcdc}
+.desc{font-size:.85rem;color:#9a9a9a;margin-bottom:1rem}
+.badge{position:absolute;top:10px;right:10px;background:#0b6b3a;color:#fff;font-size:.65rem;padding:.25rem .5rem;letter-spacing:.5px}
+.price-btn{display:inline-flex;align-items:center;gap:.4rem;text-decoration:none;color:#fff;background:#0b6b3a;padding:.5rem .9rem;font-size:.85rem;transition:background .25s ease}
+.price-btn:hover{background:#0a5f34}
+.price-card:hover{transform:translateY(-6px);box-shadow:0 14px 30px rgba(11,107,58,0.12)}
+
+/* INFO ITEMS */
+.info-items {
+	margin-top: 1rem;
+}
+
+.info-items h5,
+.info-items p {
+	font-size: 0.9rem;
+	margin-bottom: 0.3rem;
+    margin-left: 1rem;
+}
+
+.info-items a {
+	color: #dcdcdc;
+	text-decoration: none;
+}
+
+/* FOOTER */
+footer{text-align:center;padding:2rem 1rem;font-size:.8rem;color:#dcdcdc;background: #1b1b1b;}
+
+/* FLOAT BUTTON */
+.buttom-float{position:fixed;bottom:20px;right:20px;background:#0b6b3a;width:48px;height:48px;padding:0;display:flex;align-items:center;justify-content:center;border-radius:50%;box-shadow:0 10px 22px rgba(0,0,0,0.6)}
+
+/* RESPONSIVE */
+@media(max-width:768px){header{flex-direction:column;gap:.6rem}nav ul{flex-wrap:wrap;justify-content:center}main section{padding:3rem 1rem}}
