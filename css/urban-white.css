@@ -456,11 +456,22 @@ footer {
 	header {
 		flex-direction: column;
 		gap: 0.6rem;
+		align-items: center;
+		justify-content: center;
 	}
 
 	nav ul {
 		flex-wrap: wrap;
 		justify-content: center;
+	}
+
+	/* Center branding (logo + name) and action links on small screens */
+	.branding {
+		margin: 0 auto;
+	}
+
+	.acciones-header {
+		margin: 0 auto;
 	}
 
 	main section {
